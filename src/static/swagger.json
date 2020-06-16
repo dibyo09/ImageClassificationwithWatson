@@ -1,0 +1,83 @@
+
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Swagger Application",
+    "version": "1.0.0",
+    "title": "My product page",
+    "contact": {
+      "email": "lkaushik@in.ibm.com"
+    },
+    "license": {
+      "name": "IBM",
+      "url": "https://www.ibm.com/support/pages/ibm-support-licensing-start-page"
+    }
+  },
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": [
+          "Get Products"
+        ],
+        "summary": "Returns products",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/product"
+            }
+          }
+        }
+      }
+	 },
+      "/addproduct": {
+        "post": {
+          "tags": [
+            "Add Product"
+          ],
+          "summary": "Creates a new product",
+          "requestBody": {
+            "description": "Product Details",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/product"
+                }
+              }
+            }
+          },
+		  "responses": {
+			  "200": {
+				"description": "OK",
+				"schema": {
+				  "type": "string",
+				  "format": "string"
+				}
+			}
+          }
+        }
+     }
+  },
+  "components": {
+    "schemas": {
+      "product": {
+        "type": "object",
+        "properties": {
+          "sku": {
+            "type": "string",
+            "format": "string"
+          },
+          "name": {
+            "type": "string",
+            "format": "string"
+          },
+          "price": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      }
+    }
+  }
+}
+

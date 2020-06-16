@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title >Kalptree Classifier</title>
+    {{ dropzone.load() }}
+    {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px;') }}
+    </head>
+    <body>
+        <style>
+        body {
+            background-color: #170a45;
+        }
+
+        .glow {
+            font-size: 60px;
+            color: green;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Text glowing from onw shade to other shade */
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgb(43, 255, 0),
+                             0 0 20px rgb(43, 255, 0),
+                             0 0 30px #26e600,
+                             0 0 40px #26e600,
+                             0 0 50px #26e600,
+                             0 0 60px #26e600,
+                             0 0 70px #26e600;
+            }
+            to {
+                text-shadow: 0 0 20px #4dff7a;
+                             0 0 30px #4dff7a,
+                             0 0 40px #4dff7a,
+                             0 0 50px #4dff7a,
+                             0 0 60px #4dff7a,
+                             0 0 70px #4dff7a,
+                             0 0 80px #4dff7a;
+            }
+        }
+      marquee {
+        width: 100%;
+        padding: 10px 0;
+        background-color: black;
+      }
+        </style>
+        <h1 style="color:blue" class="glow"><marquee direction="scroll">Welcome to Kalptree upload your images.</marquee></h1>
+         {{ dropzone.create(action_view='index') }}
+        </body>
+    </body>
+</html>

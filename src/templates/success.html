@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Page</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: #170a45;
+        }
+
+        .glow {
+            font-size: 60px;
+            color: green;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Text glowing from onw shade to other shade */
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgb(43, 255, 0),
+                             0 0 20px rgb(43, 255, 0),
+                             0 0 30px #26e600,
+                             0 0 40px #26e600,
+                             0 0 50px #26e600,
+                             0 0 60px #26e600,
+                             0 0 70px #26e600;
+            }
+            to {
+                text-shadow: 0 0 20px #4dff7a;
+                             0 0 30px #4dff7a,
+                             0 0 40px #4dff7a,
+                             0 0 50px #4dff7a,
+                             0 0 60px #4dff7a,
+                             0 0 70px #4dff7a,
+                             0 0 80px #4dff7a;
+            }
+        }
+      marquee {
+        width: 100%;
+        padding: 10px 0;
+        background-color: black;
+      }
+        </style>
+
+<h3 style="color:white"><a href="{{ url_for('index') }}">Back</a></h3>
+    <h2 style="color:blue" class="glow"><marquee direction="scroll">Thanks for you patience while we identified your problems listed below</marquee></h2>
+<ul>
+
+    <h3 style="color:yellow">Problems </h3>
+{% for stat in results %}
+
+    <li><h3 style="color:yellow"> {{stat }} </h3></li>
+
+{% endfor %}
+
+
+    <iframe  src="https://www.google.com/search?client=firefox-b-d&q=yellow+dal" name="myFrame"></iframe>
+    <p><a href="https://www.google.com/search?-b-d&q=yellow+dal" target="myFrame">More info </a></p>
+
+</ul>
+</body>
+</html>
